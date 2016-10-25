@@ -19,8 +19,8 @@
 */
 require 'vendor/autoload.php';
 
-$client = new Zelenin\Telegram\Bot\Api(''); // Set your access token
-$url = ''; // URL RSS feed
+$client = new Zelenin\Telegram\Bot\Api('282292401:AAE2ns2v0dHgEopS58BhllzKh1694mDGavs'); // Set your access token
+$url = 'http://linkdoni.soft98.ir/rss.xml'; // URL RSS feed
 $update = json_decode(file_get_contents('php://input'));
 
 //your app
