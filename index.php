@@ -40,7 +40,7 @@ try {
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => "List of commands :\n /email -> Get email address of the owner \n /latest -> Get latest posts of the blog 
-    		/help -> Shows list of available commands"
+    		/help -> Shows list of available commands \n /test -> برای تست کردن نمونه کد     "
     		]);
 
     }
@@ -61,6 +61,24 @@ try {
 				]);
 
     }
+    else if($update->message->text == '/test')
+    {
+  
+	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'در فکر']);
+    	$response = $client->sendMessage([
+        	'chat_id' => $update->message->chat->id,
+        	'text' => "سلام خوبید",
+		'parse_mode' => "*bold text*
+_italic text_
+[text](http://www.example.com/)
+`inline fixed-width code`
+```text
+pre-formatted fixed-width code block
+```"
+    }
+	
+	
+	
     else
     {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
