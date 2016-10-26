@@ -67,14 +67,7 @@ try {
 	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
         	'chat_id' => $update->message->chat->id,
-        	'text' => "سلام خوبید",
-		'parse_mode' => "*bold text*
-				_italic text_
-				[text](http://www.example.com/)
-				`inline fixed-width code`
-				```text
-				pre-formatted fixed-width code block
-				```"
+        	'text' => "سلام خوبید"
 						]);
     }
 	
