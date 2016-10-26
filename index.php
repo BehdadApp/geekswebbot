@@ -64,7 +64,7 @@ try {
     else if($update->message->text == '/test')
     {
   
-	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'در فکر']);
+	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
         	'chat_id' => $update->message->chat->id,
         	'text' => "سلام خوبید",
