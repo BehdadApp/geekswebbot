@@ -69,12 +69,13 @@ try {
         	'chat_id' => $update->message->chat->id,
         	'text' => "سلام خوبید",
 		'parse_mode' => "*bold text*
-_italic text_
-[text](http://www.example.com/)
-`inline fixed-width code`
-```text
-pre-formatted fixed-width code block
-```"
+				_italic text_
+				[text](http://www.example.com/)
+				`inline fixed-width code`
+				```text
+				pre-formatted fixed-width code block
+				```"
+						]);
     }
 	
 	
