@@ -26,30 +26,9 @@ $update = json_decode(file_get_contents('php://input'));
 //your app
 try {
 
-    if($update->message->text == '/start2')
-    {
-	    $keyboard = [
-		    ['۷', '۸', '۹'],
-		    ['۴', '۵', '۶'],
-		    ['۱', '۲', '۳'],
-			 ['۰']
-		];
-
-		$reply_markup = $client->replyKeyboardMarkup([
-		  'keyboard' => $keyboard, 
-		  'resize_keyboard' => true, 
-		  'one_time_keyboard' => true
-		]);
-		$response = $client->sendMessage([
-		  'chat_id' => 'CHAT_ID', 
-		  'text' => 'Hello World', 
-		  'reply_markup' => $reply_markup
-		]);
-
-		$messageId = $response->getMessageId();
-     	]);
+   
 	   
-	else if($update->message->text == '/email')
+	 if($update->message->text == '/email')
     {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
