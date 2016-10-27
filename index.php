@@ -49,7 +49,7 @@ try {
 		$messageId = $response->getMessageId();
      	]);
 	   
-	if($update->message->text == '/email')
+	else if($update->message->text == '/email')
     {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
