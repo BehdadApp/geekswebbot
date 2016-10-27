@@ -26,7 +26,7 @@ $update = json_decode(file_get_contents('php://input'));
 //your app
 try {
 
-    if($update->message->text == '/start')
+    if($update->message->text == '/start2')
     {
 	    $keyboard = [
 		    ['۷', '۸', '۹'],
@@ -40,7 +40,7 @@ try {
 		  'resize_keyboard' => true, 
 		  'one_time_keyboard' => true
 		]);
-		$response = $telegram->sendMessage([
+		$response = $client->sendMessage([
 		  'chat_id' => 'CHAT_ID', 
 		  'text' => 'Hello World', 
 		  'reply_markup' => $reply_markup
