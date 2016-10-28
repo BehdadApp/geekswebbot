@@ -50,20 +50,7 @@ try {
 		
 		case "1.مشاوره";
 		$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-		$response = $client->sendMessage([
-			'chat_id' => $update->message->chat->id,
-			'text' => "گروه مشاوره را انتخاب کنید",
-			'reply_markup'=>json_encode([
-			'inline_keyboard'=>[
-				[['text'=>'گروه توسعه ربات تلگرام','url'='http://soft98.ir']],
-				[['text'=>'گروه توسعه ربات تلگرام','url'='http://soft98.ir']],
-				[['text'=>'گروه توسعه ربات تلگرام','url'='http://soft98.ir']],
-				[['text'=>'گروه توسعه ربات تلگرام','url'='http://soft98.ir']],
-				[['text'=>'گروه توسعه ربات تلگرام','url'='http://soft98.ir']],
-				[['text'=>'گروه توسعه ربات تلگرام','url'='http://soft98.ir']]
-			    ]
-			])
-		]);
+		
 		break;
 
 
