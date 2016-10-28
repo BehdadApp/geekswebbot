@@ -26,9 +26,18 @@ $update = json_decode(file_get_contents('php://input'));
 //your app
 try {
 
-   
+    if($update->message->text == '/find')
+    {
+    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+    	$response = $client->sendMessage([
+        	'chat_id' => $update->message->chat->id,
+        	'text' => "در حال کاوش"
+     	]);
+	    
+	    
+    }
 	   
-	 if($update->message->text == '/email')
+    else if($update->message->text == '/email')
     {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
