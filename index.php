@@ -31,15 +31,15 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
         	'chat_id' => $update->message->chat->id,
-        	'text' => "در حال کاوش",
+        	'text' => "",
 		'reply_markup'=>json_encode([
                 'keyboard'=>[
                     [
-                        ['text'=>"رفرش زمان"],['text'=>"رفرش زمان"]
+                        ['text'=>"1.مشاور"],['text'=>"2.آموزش"]
 			
                     ],
 		    [
-                        ['text'=>"رفرش زمان"],['text'=>"رفرش زمان"]
+                        ['text'=>"3.بهداشت و درمان"],['text'=>"4.بیشتر"]
 			
                     ]
                 ],
