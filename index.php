@@ -14,7 +14,7 @@
 *
 * Author(s):
 *
-* © 2015 Kasra Madadipouya <kasra@madadipouya.com>
+* © 2017 Mohammad Behdad <m.behdad7@gmail.com>
 *
 */
 require 'vendor/autoload.php';
@@ -25,28 +25,38 @@ $update = json_decode(file_get_contents('php://input'));
 
 //your app
 try {
+	switch ($update->message->text) {
+	    case "/find":
+	       $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+		$response = $client->sendMessage([
+			'chat_id' => $update->message->chat->id,
+			'text' => "انتخاب دسته",
+			'reply_markup'=>json_encode([
+			'keyboard'=>[
+			    [
+				['text'=>"1.مشاور"],['text'=>"2.آموزش"]
 
+			    ],
+			    [
+				['text'=>"3.بهداشت و درمان"],['text'=>"4.بیشتر"]
+
+			    ]
+			],
+			'resize_keyboard'=>true,
+			'one_time_keyboard'=>false
+		      ])	
+		]);
+	       break;
+
+
+	    default:
+
+	}		
+		
+		
     if($update->message->text == '/find')
     {
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-    	$response = $client->sendMessage([
-        	'chat_id' => $update->message->chat->id,
-        	'text' => "انتخاب دسته",
-		'reply_markup'=>json_encode([
-                'keyboard'=>[
-                    [
-                        ['text'=>"1.مشاور"],['text'=>"2.آموزش"]
-			
-                    ],
-		    [
-                        ['text'=>"3.بهداشت و درمان"],['text'=>"4.بیشتر"]
-			
-                    ]
-                ],
-		'resize_keyboard'=>true,
-		'one_time_keyboard'=>false
-	      ])	
-     	]);
+    	
 	    
 	    
     }
