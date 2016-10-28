@@ -27,14 +27,14 @@ $update = json_decode(file_get_contents('php://input'));
 try {
 	switch ($update->message->text) {
 	    case "/find":
-	       $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+		$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 		$response = $client->sendMessage([
 			'chat_id' => $update->message->chat->id,
 			'text' => "انتخاب دسته",
 			'reply_markup'=>json_encode([
 			'keyboard'=>[
 			    [
-				['text'=>"1.مشاور"],['text'=>"2.آموزش"]
+				['text'=>"1.مشاوره"],['text'=>"2.آموزش"]
 
 			    ],
 			    [
@@ -47,6 +47,23 @@ try {
 		      ])	
 		]);
 	       break;
+		
+		case "1.مشاوره";
+		$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+		$response = $client->sendMessage([
+			'chat_id' => $update->message->chat->id,
+			'text' => "گروه مشاوره را انتخاب کنید",
+			'reply_markup'=>json_encode([
+			'inline_keyboard'=>[
+				[['text'=>'گروه توسعه ربات تلگرام','url'='http://soft98.ir']],
+				[['text'=>'گروه توسعه ربات تلگرام','url'='http://soft98.ir']],
+				[['text'=>'گروه توسعه ربات تلگرام','url'='http://soft98.ir']],
+				[['text'=>'گروه توسعه ربات تلگرام','url'='http://soft98.ir']],
+				[['text'=>'گروه توسعه ربات تلگرام','url'='http://soft98.ir']],
+				[['text'=>'گروه توسعه ربات تلگرام','url'='http://soft98.ir']]
+			    ]
+			])
+		break;
 
 
 	    default:
