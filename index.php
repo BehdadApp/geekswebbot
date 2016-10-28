@@ -53,8 +53,7 @@ try {
 		$response = $client->sendMessage([
 			'chat_id' => $update->message->chat->id,
 			'text' => "گروه مشاوره را انتخاب کنید",
-			'reply_markup'=>json_encode([
-            'reply_markup'=>[
+		'reply_markup'=>[
                 'inline_keyboard'=>[
                     [
                         ['text'=>"🍀   مفاهیم مهندسی وایرلس",'url'=>'https://telegram.me/joinchat/BZSb2Tuv7Kxk21OYT4TLKw']
