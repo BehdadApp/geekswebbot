@@ -43,7 +43,7 @@ try {
 			
                     ]
                 ],
-		'resize_keyboard'=>True
+		'resize_keyboard'=>false
 	      ])	
      	]);
 	    
