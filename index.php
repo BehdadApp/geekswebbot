@@ -35,9 +35,15 @@ try {
 		'reply_markup'=>json_encode([
                 'keyboard'=>[
                     [
-                        ['text'=>"رفرش زمان"]
+                        ['text'=>"رفرش زمان"],['text'=>"رفرش زمان"]
+			
+                    ],
+		    [
+                        ['text'=>"رفرش زمان"],['text'=>"رفرش زمان"]
+			
                     ]
-                ]
+                ],
+		'resize_keyboard'=>True
 	      ])	
      	]);
 	    
