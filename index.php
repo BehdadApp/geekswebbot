@@ -78,7 +78,16 @@ try {
 		
 		$Tlink=substr($update->message->text,strpos($update->message->text,"https://telegram.me/joinchat/"),51);
 		$mappost="idUser=5" . "&Type=" . $Type . "&Cat=10" . "&Title=" .$Title. "&Des=" .$Des. "&TelegramLink=" .$Tlink. "&Special=0" . "&Image=f3edc3964a03a5bc0086c1238afa9dc6.jpg" ;
-	
+		$post = [
+			'idUser' => 5,
+			'Type' => $Type,
+			'Cat' => 10,
+			'Title' => $Title,
+			'Des' => $Des,
+			'TelegramLink' => $Tlink,
+			'Special' => 0 ,
+			'Image' => 'f3edc3964a03a5bc0086c1238afa9dc6.jpg',
+		];
 		//$lines =  file_get_contents("http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$mappost);	
 		
 		$ch = curl_init();
@@ -88,8 +97,7 @@ try {
 		//curl_setopt($ch, CURLOPT_POSTFIELDS,$mappost);
 
 		// in real life you should use something like:
-		 curl_setopt($ch, CURLOPT_POSTFIELDS, 
-		          http_build_query(array('idUser' => '5'  ,'Type' => $Type  ,'Cat' => '10'  ,'Title' => $Title  ,'Des' => $Des  ,'TelegramLink' => $Tlink  ,'Special' => '0'   ,'Image' => 'f3edc3964a03a5bc0086c1238afa9dc6.jpg' )));
+		 curl_setopt($ch, CURLOPT_POSTFIELDS, $post); 
 
 		// receive server response ...
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -101,7 +109,7 @@ try {
 		$response = $client->sendChatAction(['chat_id' => '-121921633', 'action' => 'typing']);
    	 	$response = $client->sendMessage([
     		'chat_id' =>  '-121921633',
-    		'text' =>$server_output ."                     "."http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$mappost  // "http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$mappost   //$update->message->text 
+    		'text' =>$server_output ."                     "."http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$post  // "http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$mappost   //$update->message->text 
     		]);
 		
 	}
