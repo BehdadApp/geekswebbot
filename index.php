@@ -75,7 +75,7 @@ try {
 		  //  CURLOPT_RETURNTRANSFER => true
 	//	));
 
-		$output = curl_exec($ch);
+	//	$output = curl_exec($ch);
 
 		
 		
