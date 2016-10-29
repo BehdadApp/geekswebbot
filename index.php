@@ -74,10 +74,8 @@ try {
 		$Des= $update->message->text;
 		if (strpos($update->message->text,"گروه")){	$Type=1;	}
 		else{	$Type=2;	}		
-		
-		
-		$Tlink=substr($update->message->text,strpos($update->message->text,"https://telegram.me/joinchat/"),51);
-		$mappost="idUser=5" . "&Type=" . $Type . "&Cat=10" . "&Title=" .$Title. "&Des=" .$Des. "&TelegramLink=" .$Tlink. "&Special=0" . "&Image=f3edc3964a03a5bc0086c1238afa9dc6.jpg" ;
+	
+		$Tlink=substr($update->message->text,strpos($update->message->text,"telegram.me/joinchat/"),43);
 		$post = [
 			'idUser' => 5,
 			'Type' => $Type,
@@ -88,22 +86,14 @@ try {
 			'Special' => 0 ,
 			'Image' => 'f3edc3964a03a5bc0086c1238afa9dc6.jpg',
 		];
-		//$lines =  file_get_contents("http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$mappost);	
-		
-		$ch = curl_init();
 
+		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL,"http://srv.parperook.ir/TeleBazaar/AddFromBot.php");
 		curl_setopt($ch, CURLOPT_POST, 1);
-		//curl_setopt($ch, CURLOPT_POSTFIELDS,$mappost);
-
-		// in real life you should use something like:
-		 curl_setopt($ch, CURLOPT_POSTFIELDS, $post); 
-
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $post); 
 		// receive server response ...
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
 		$server_output = curl_exec ($ch);
-
 		curl_close ($ch);
 
 		$response = $client->sendChatAction(['chat_id' => '-121921633', 'action' => 'typing']);
