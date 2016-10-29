@@ -23,6 +23,12 @@ $client = new Zelenin\Telegram\Bot\Api('282292401:AAE2ns2v0dHgEopS58BhllzKh1694m
 $url = 'http://linkdoni.soft98.ir/rss.xml'; // URL RSS feed
 $update = json_decode(file_get_contents('php://input'));
 
+function limitword($string, $limit){
+    $words = explode(" ",$string);
+    $output = implode(" ",array_splice($words,0,$limit));
+    return $output;
+}
+
 //your app
 try {
 	switch ($update->message->text) {
