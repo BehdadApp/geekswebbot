@@ -57,7 +57,7 @@ try {
 	    default:
 		$response = $client->sendChatAction(['chat_id' => '-121921633', 'action' => 'typing']);
    	 	$response = $client->sendMessage([
-    		'chat_id' => $update->message->chat->id,
+    		'chat_id' =>  '-121921633',
     		'text' => "".$update->message->text .  $update->message->chat->id
     		]);
 	}		
