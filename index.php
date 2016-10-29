@@ -65,9 +65,14 @@ try {
 	if (strpos($update->message->text,"telegram.me/joinchat/")){
 		
 		
+		$Title=substr($update->message->text,1,10);
+		$Des=substr($update->message->text,1,strpos($update->message->text,"https://telegram.me/joinchat/"));
+		if (strpos($update->message->text,"گروه")){	$Type=1;	}
+		else{	$Type=2;	}		
+		
 		
 		$Tlink=substr($update->message->text,strpos($update->message->text,"https://telegram.me/joinchat/"),51);
-		$mappost="idUser=5" . "&Type=" . "2" . "&Cat=10" . "&Title=" ."333". "&Des=" ."33333333". "&TelegramLink=" .$Tlink. "&Special=0" . "&Image=f3edc3964a03a5bc0086c1238afa9dc6.jpg" ;
+		$mappost="idUser=5" . "&Type=" . $Type . "&Cat=10" . "&Title=" .$Title. "&Des=" .$Des. "&TelegramLink=" .$Tlink. "&Special=0" . "&Image=f3edc3964a03a5bc0086c1238afa9dc6.jpg" ;
 	
 		$lines = file("http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$mappost);	
 		
