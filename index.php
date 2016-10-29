@@ -58,7 +58,7 @@ try {
 		$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
    	 	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "لطفاً یک گزینه را انتخاب کنید..".$update->message->text
+    		'text' => "".$update->message->text .  $update->message->chat->id
     		]);
 	}		
 		
