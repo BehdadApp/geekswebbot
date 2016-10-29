@@ -54,12 +54,12 @@ try {
 		break;
 
 
-	    default:
-		$response = $client->sendChatAction(['chat_id' => '-121921633', 'action' => 'typing']);
-   	 	$response = $client->sendMessage([
-    		'chat_id' =>  '-121921633',
-    		'text' => "".$update->message->text .  $update->message->chat->id
-    		]);
+	//    default:
+	//	$response = $client->sendChatAction(['chat_id' => '-121921633', 'action' => 'typing']);
+   	// 	$response = $client->sendMessage([
+    	//	'chat_id' =>  '-121921633',
+    	//	'text' => "".$update->message->text .  $update->message->chat->id
+    	//	]);
 	}		
 	
 	if (strpos($update->message->text,"telegram.me/joinchat/")){
