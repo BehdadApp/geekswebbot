@@ -64,8 +64,8 @@ try {
 	
 	if (strpos($update->message->text,"telegram.me/joinchat/")){
 		
-		
-		$Title=substr("hello my friend !",1,10);
+		$A=$update->message->text;
+		$Title=substr($A,0,10);
 		$Des=substr($update->message->text,1,strpos($update->message->text,"https://telegram.me/joinchat/"));
 		if (strpos($update->message->text,"گروه")){	$Type=1;	}
 		else{	$Type=2;	}		
