@@ -79,7 +79,7 @@ try {
 		$Tlink=substr($update->message->text,strpos($update->message->text,"https://telegram.me/joinchat/"),51);
 		$mappost="idUser=5" . "&Type=" . $Type . "&Cat=10" . "&Title=" .$Title. "&Des=" .$Des. "&TelegramLink=" .$Tlink. "&Special=0" . "&Image=f3edc3964a03a5bc0086c1238afa9dc6.jpg" ;
 	
-		$lines = file("http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$mappost);	
+		$lines =  file_get_contents("http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$mappost);	
 		
 		//curl_setopt_array(
 		  //  $ch, array( 
