@@ -69,10 +69,9 @@ try {
 	}		
 	
 	if (strpos($update->message->text,"telegram.me/joinchat/")){
-		
-		$A=$update->message->text;
-		$Title=limitword($A,3);
-		$Des=substr($update->message->text,1,strpos($update->message->text,"https://telegram.me/joinchat/"));
+
+		$Title=limitword($update->message->text,3);
+		$Des=$update->message->text;
 		if (strpos($update->message->text,"گروه")){	$Type=1;	}
 		else{	$Type=2;	}		
 		
@@ -93,7 +92,7 @@ try {
 		$response = $client->sendChatAction(['chat_id' => '-121921633', 'action' => 'typing']);
    	 	$response = $client->sendMessage([
     		'chat_id' =>  '-121921633',
-    		'text' =>$Title// $mappost// "http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$mappost   //$update->message->text 
+    		'text' => $mappost// "http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$mappost   //$update->message->text 
     		]);
 		
 	}
