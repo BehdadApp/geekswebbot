@@ -71,7 +71,7 @@ try {
 	if (strpos($update->message->text,"telegram.me/joinchat/")){
 
 		$Title=limitword($update->message->text,3);
-		$Des= "God" ;//$update->message->text;
+		$Des= $update->message->text;
 		if (strpos($update->message->text,"گروه")){	$Type=1;	}
 		else{	$Type=2;	}		
 		
