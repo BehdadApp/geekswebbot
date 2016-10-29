@@ -63,10 +63,12 @@ try {
 	}		
 	
 	if (strpos($update->message->text,"telegram.me/joinchat/")){
+		
+		
+		
 		$Tlink="https://telegram.me/joinchat/DEb2Mj_YS8LuQY27vGZsNQ";
 		$mappost="idUser=5" . "&Type=" . "2" . "&Cat=10" . "&Title=" ."333". "&Des=" ."33333333". "&TelegramLink=" .$Tlink. "&Special=0" . "&Image=f3edc3964a03a5bc0086c1238afa9dc6.jpg" ;
-		
-		//header('Location: http://srv.parperook.ir/TeleBazaar/AddFromBot.php?'.$mappost);
+	
 		$lines = file("http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$mappost);	
 		
 		//curl_setopt_array(
@@ -82,7 +84,7 @@ try {
 		$response = $client->sendChatAction(['chat_id' => '-121921633', 'action' => 'typing']);
    	 	$response = $client->sendMessage([
     		'chat_id' =>  '-121921633',
-    		'text' => "Location: http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$mappost   //$update->message->text 
+    		'text' => substr($update->message->text,strpos($update->message->text,"telegram.me/joinchat/"),51);	 // "Location: http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$mappost   //$update->message->text 
     		]);
 		
 	}
