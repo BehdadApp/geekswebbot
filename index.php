@@ -84,12 +84,10 @@ try {
 
 	//	$output = curl_exec($ch);
 
-		
-		
 		$response = $client->sendChatAction(['chat_id' => '-121921633', 'action' => 'typing']);
    	 	$response = $client->sendMessage([
     		'chat_id' =>  '-121921633',
-    		'text' =>  "Location: http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$mappost   //$update->message->text 
+    		'text' =>  "http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$mappost   //$update->message->text 
     		]);
 		
 	}
