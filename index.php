@@ -72,8 +72,8 @@ try {
 
 		$Title=limitword($update->message->text,3);
 		$Des= $update->message->text;
-		if (strpos($update->message->text,"گروه") ||strpos($update->message->text,"چت ") || ){	$Type=1;	}
-		else{	$Type=2;	}		
+		if (strpos($update->message->text,"گروه") ||strpos($update->message->text,"چت ") || ){	$Type=1; $img="group.jpg";	}
+		else{	$Type=2; $img="channel.jpg";	}		
 	
 		$Tlink='https://'.substr($update->message->text,strpos($update->message->text,"telegram.me/joinchat/"),43);
 		$post = [
@@ -84,7 +84,7 @@ try {
 			'Des' => $Des,
 			'TelegramLink' => $Tlink,
 			'Special' => 0 ,
-			'Image' => 'f3edc3964a03a5bc0086c1238afa9dc6.jpg',
+			'Image' => $img,
 		];
 
 		$ch = curl_init();
