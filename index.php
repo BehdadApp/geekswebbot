@@ -72,7 +72,7 @@ try {
 
 		$Title=limitword($update->message->text,3);
 		$Des= $update->message->text;
-		if (strpos($update->message->text,"گروه") ||strpos($update->message->text,"چت ") || ){	$Type=1;
+		if (strpos($update->message->text,"گروه") || strpos($update->message->text,"چت ")  ){	$Type=1;
 			$img="group.jpg";	}
 		else{	$Type=2;
 		     $img="channel.jpg";	}		
@@ -101,7 +101,7 @@ try {
 		$response = $client->sendChatAction(['chat_id' => '-121921633', 'action' => 'typing']);
    	 	$response = $client->sendMessage([
     		'chat_id' =>  '-121921633',
-    		'text' => $server_output // ."                     "."http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$post  // "http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$mappost   //$update->message->text 
+    		'text' => $Des //$server_output // ."                     "."http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$post  // "http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$mappost   //$update->message->text 
     		]);
 		
 	}
