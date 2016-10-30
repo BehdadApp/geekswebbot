@@ -98,10 +98,10 @@ try {
 		$server_output = curl_exec ($ch);
 		curl_close ($ch);
 
-		$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+		$response = $client->sendChatAction(['chat_id' => '-1001077958434', 'action' => 'typing']);
    	 	$response = $client->sendMessage([
-    		'chat_id' =>  $update->message->chat->id,
-    		'text' => $Des . $update->message->chat->id   //$server_output // ."                     "."http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$post  // "http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$mappost   //$update->message->text 
+    		'chat_id' =>  '-1001077958434',
+    		'text' => $Des  //$server_output // ."                     "."http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$post  // "http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$mappost   //$update->message->text 
     		]);
 		
 	}
