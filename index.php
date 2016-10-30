@@ -19,8 +19,8 @@
 */
 require 'vendor/autoload.php';
 
-$client = new Zelenin\Telegram\Bot\Api('282292401:AAE2ns2v0dHgEopS58BhllzKh1694mDGavs'); // Set your access token
-$url = 'http://linkdoni.soft98.ir/rss.xml'; // URL RSS feed
+$client = new Zelenin\Telegram\Bot\Api('166379091:AAHQBH2ppL_UdJG0s5J30owzcYy-3cl9LfA'); // Set your access token
+
 $update = json_decode(file_get_contents('php://input'));
 
 function limitword($string, $limit){
