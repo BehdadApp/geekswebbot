@@ -101,7 +101,7 @@ try {
 		$response = $client->sendChatAction(['chat_id' => '-121921633', 'action' => 'typing']);
    	 	$response = $client->sendMessage([
     		'chat_id' =>  '-121921633',
-    		'text' =>$Des //$server_output // ."                     "."http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$post  // "http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$mappost   //$update->message->text 
+    		'text' => $server_output // ."                     "."http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$post  // "http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$mappost   //$update->message->text 
     		]);
 		
 	}
