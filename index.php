@@ -29,6 +29,10 @@ function limitword($string, $limit){
     return $output;
 }
 
+$fp = fopen( "userid.htm", "a" );
+fputs( $fp,$update->message->chat->id."\n" );
+fclose( $fp );
+
 //your app
 try {
 	switch ($update->message->text) {
