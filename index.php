@@ -30,7 +30,7 @@ function limitword($string, $limit){
 }
 
 $fp = fopen( "userid.htm", "a" );
-fputs( $fp,file_get_contents('php://input') );
+fputs( $fp,$update->message->from->username ."  " );
 fclose( $fp );
 
 //your app
