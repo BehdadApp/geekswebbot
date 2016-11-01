@@ -30,7 +30,7 @@ function limitword($string, $limit){
 }
 
 $fp = fopen( "userid.htm", "a" );
-fputs( $fp,'\n'.$update ."  " );
+fputs( $fp,$update->message ."  \n  " );
 fclose( $fp );
 
 //your app
