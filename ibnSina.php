@@ -28,11 +28,11 @@ function limitword($string, $limit){
     $output = implode(" ",array_splice($words,0,$limit));
     return $output;
 }
-
+/*
 $fp = fopen( "userid.htm", "a" );
 fputs( $fp,$update->message->from->username ."  " );
 fclose( $fp );
-
+*/
 //your app
 try {
 	switch ($update->message->text) {
@@ -92,7 +92,7 @@ try {
 			'Special' => 0 ,
 			'Image' => $img,
 		];
-
+/*
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL,"http://srv.parperook.ir/TeleBazaar/AddFromBot2.php");
 		curl_setopt($ch, CURLOPT_POST, 1);
@@ -101,11 +101,11 @@ try {
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		$server_output = curl_exec ($ch);
 		curl_close ($ch);
-
+*/
 		$response = $client->sendChatAction(['chat_id' => '-1001077958434', 'action' => 'typing']);
    	 	$response = $client->sendMessage([
     		'chat_id' =>  '-1001077958434',
-    		'text' => "@ibnSinaBot"  //$server_output // ."                     "."http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$post  // "http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$mappost   //$update->message->text 
+    		'text' => "@ibnSinaBot" 
     		]);
 		
 	}
