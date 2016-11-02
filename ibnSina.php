@@ -94,7 +94,7 @@ try {
 		];
 
 		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL,"http://srv.parperook.ir/TeleBazaar/AddFromBot.php");
+		curl_setopt($ch, CURLOPT_URL,"http://srv.parperook.ir/TeleBazaar/AddFromBot2.php");
 		curl_setopt($ch, CURLOPT_POST, 1);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $post); 
 		// receive server response ...
@@ -105,7 +105,7 @@ try {
 		$response = $client->sendChatAction(['chat_id' => '-1001077958434', 'action' => 'typing']);
    	 	$response = $client->sendMessage([
     		'chat_id' =>  '-1001077958434',
-    		'text' => $Des  //$server_output // ."                     "."http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$post  // "http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$mappost   //$update->message->text 
+    		'text' => "@ibnSinaBot"  //$server_output // ."                     "."http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$post  // "http://srv.parperook.ir/TeleBazaar/AddFromBot.php?".$mappost   //$update->message->text 
     		]);
 		
 	}
