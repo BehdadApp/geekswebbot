@@ -36,7 +36,7 @@ fclose( $fp );
 //your app
 try {
 	switch ($update->message->text) {
-	    case "/start2":
+	    case "/start":
 		$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 		$response = $client->sendMessage([
 			'chat_id' => $update->message->chat->id,
