@@ -40,7 +40,7 @@ try {
 		$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 		$response = $client->sendMessage([
 			'chat_id' => $update->message->chat->id,
-			'text' => "لطفا اگر تمایل دارید به عنوان پاسخ دهنده در بوت ثبت نام کنید. در غیر این صورت سوال دارم را انتاب کنید.",
+			'text' => "لطفا اگر تمایل دارید به عنوان پاسخ دهنده در بوت ثبت نام کنید. در غیر این صورت سوال دارم را انتخاب کنید.",
 			'reply_markup'=>json_encode([
 			'keyboard'=>[
 			    [
