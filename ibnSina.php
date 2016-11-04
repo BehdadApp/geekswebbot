@@ -36,15 +36,15 @@ fclose( $fp );
 //your app
 try {
 	switch ($update->message->text) {
-	    case "/start2":
+	    case "/start":
 		$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 		$response = $client->sendMessage([
 			'chat_id' => $update->message->chat->id,
-			'text' => "انتخاب دسته",
+			'text' => "لطفا اگر تمایل دارید به عنوان پاسخ دهنده در بوت ثبت نام کنید. در غیر این صورت سوال دارم را انتاب کنید.",
 			'reply_markup'=>json_encode([
 			'keyboard'=>[
 			    [
-				['text'=>"Answer"],['text'=>"2.پاسخگو میشوم"]
+				['text'=>"سوال دارم"],['text'=>"2.پاسخگو میشوم"]
 
 			    ],
 			    [
