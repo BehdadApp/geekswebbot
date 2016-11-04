@@ -58,9 +58,24 @@ try {
 		]);
 	       break;
 		
-		case "Answer";
+		case "سوال دارم";
 		$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-		
+		$response = $client->sendMessage([
+			'chat_id' => $update->message->chat->id,
+			'text' => "در چه موضوعی سوال دارید",
+			'reply_markup'=>json_encode([
+			'inline_keyboard'=>[
+			    [
+				['text'=>"سوال دارم"],['text'=>"پاسخگو میشوم"]
+
+			    ],
+			    [
+				['text'=>"راهنمای"],['text'=>"ارتباط با ما"]
+
+			    ]
+			],
+		      ])	
+		]);
 		break;
 
 
